@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+.env
+data/*.npy
+data/*.csv
+!data/.gitkeep
+.python-version
+.vscode/

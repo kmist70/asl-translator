@@ -28,16 +28,33 @@ hello, thank you, please, sorry, yes, no, help, want, need, like, love, more, fi
 
 ## Tech Stack
 
-- **Training**: Python, TensorFlow/Keras, MediaPipe, OpenCV, NumPy
+- **Training**: Python 3.11, TensorFlow 2.21, MediaPipe 0.10.35, OpenCV, NumPy
 - **Frontend**: React, TensorFlow.js, @mediapipe/hands
 - **Deployment**: Static hosting (Vercel/Netlify) — no backend required, all inference is client-side
 
 ## Setup
 
+### Requirements
+
+- Python 3.11 (required — TensorFlow 2.21 drops Python 3.9 support, and Python 3.13 has unofficial MediaPipe compatibility)
+- Node.js and npm (for frontend, once scaffolded)
+
 ### Training environment
 
+Create and activate a virtual environment pinned to Python 3.11:
+
     cd training
+    python3.11 -m venv venv
+    source venv/bin/activate      # Windows: venv\Scripts\activate
+
+Install dependencies:
+
+    pip install --upgrade pip
     pip install -r requirements.txt
+
+Verify the install:
+
+    python -c "import tensorflow as tf; import mediapipe as mp; import cv2; print(tf.__version__, mp.__version__, cv2.__version__)"
 
 ### Frontend environment
 
@@ -45,9 +62,13 @@ hello, thank you, please, sorry, yes, no, help, want, need, like, love, more, fi
     npm install
     npm start
 
+## Repo Hygiene
+
+This project uses `.gitignore` to exclude the Python `venv/`, `__pycache__/`, editor settings (`.vscode/`), local Python version markers (`.python-version`), raw landmark data (`data/*.npy`, `data/*.csv`), and `node_modules/` once the frontend is scaffolded. Do not commit the `venv/` folder — it should always be recreated locally via the setup steps above.
+
 ## Status
 
-🚧 In progress — currently scaffolding project structure and vocabulary dataset collection.
+🚧 In progress — training environment set up and verified; next steps are landmark extraction script and frontend scaffolding.
 
 ## License
 
