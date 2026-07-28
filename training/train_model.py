@@ -101,18 +101,13 @@ def build_model(num_classes):
     model = tf.keras.models.Sequential([
         tf.keras.layers.Input(shape=(SEQUENCE_LENGTH, NUM_FEATURES)),
 
-        # First LSTM Layer
-        tf.keras.layers.LSTM(64, return_sequences=True, kernel_regularizer=tf.keras.regularizers.l2(0.001)),
+        tf.keras.layers.LSTM(64, return_sequences=True, unroll=True, kernel_regularizer=tf.keras.regularizers.l2(0.001)),
         tf.keras.layers.Dropout(0.4),
 
-        # Second LSTM Layer
-        tf.keras.layers.LSTM(32, return_sequences=False, kernel_regularizer=tf.keras.regularizers.l2(0.001)),
+        tf.keras.layers.LSTM(32, return_sequences=False, unroll=True, kernel_regularizer=tf.keras.regularizers.l2(0.001)),
         tf.keras.layers.Dropout(0.4),
 
-        # Dense Layer
         tf.keras.layers.Dense(16, activation='relu', kernel_regularizer=tf.keras.regularizers.l2(0.001)),
-
-        # Output Layer
         tf.keras.layers.Dense(num_classes, activation='softmax')
     ])
 
