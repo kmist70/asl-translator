@@ -2,7 +2,7 @@ venv/
 __pycache__/
 *.pyc
 .env
-data/raw_videos/
+data/
 data/*.npy
 data/*.csv
 !data/.gitkeep
