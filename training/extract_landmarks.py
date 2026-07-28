@@ -1,6 +1,3 @@
-# requirements: mediapipe, opencv-python, numpy, tqdm
-# pip install mediapipe opencv-python numpy tqdm
-
 import json
 import pathlib
 import statistics

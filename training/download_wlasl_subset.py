@@ -1,7 +1,3 @@
-# requirements: yt-dlp, requests, tqdm, opencv-python, numpy
-# (in addition to packages already in your environment)
-# pip install yt-dlp requests tqdm
-
 import json
 import os
 import pathlib
@@ -25,9 +21,6 @@ TARGET_VOCAB = {
 }
 
 # Path to the WLASL metadata file.
-# IMPORTANT: You must download this file manually from the WLASL GitHub repository:
-# https://github.com/dxli94/WLASL/blob/master/start_kit/WLASL_v0.3.json
-# Place it in a `raw_data` directory inside the `training` folder.
 METADATA_PATH = pathlib.Path("raw_data/WLASL_v0.3.json")
 
 # Base directory where the final, extracted video clips will be saved.

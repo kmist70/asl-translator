@@ -8,3 +8,6 @@ data/*.csv
 !data/.gitkeep
 .python-version
 .vscode/
+training/raw_data/
+models/asl_lstm_model/
+training/models_checkpoints/*.keras
