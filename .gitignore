@@ -14,7 +14,3 @@ training/models_checkpoints/*.keras
 converter_venv/
 node_modules/
 frontend/node_modules/
-models/asl_lstm_model_v2/
-models/asl_lstm_model_v3/
-frontend/public/model_v2/
-frontend/public/model_v3/
